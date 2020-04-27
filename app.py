@@ -3,17 +3,20 @@ from resizeimage import resizeimage
 import sys
 import boto3
 import io
+import os
 
-#Open up aws 
+name = os.environ.get('name')
+
+#Open up aws
 s3 = boto3.client('s3')
 s3r = boto3.resource('s3')
 bucket = 'practica2buck'
 
 #New name for the new file
-filename = 'SMALL'+sys.argv[1]
+filename = 'SMALL'+name
 
 #Download the file with the new name
-s3.download_file(bucket, sys.argv[1], filename)
+s3.download_file(bucket, name, filename)
 print('image downloaded')
 
 #Open downloaded file and resize image
