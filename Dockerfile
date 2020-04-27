@@ -6,6 +6,7 @@ RUN pip install Pillow
 
 WORKDIR /app
 COPY app.py /app/
+COPY resize.sh /app/
 
 VOLUME ["/app/images"]
 
