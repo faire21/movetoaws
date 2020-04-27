@@ -8,5 +8,5 @@ WORKDIR /app
 COPY app.py /app/
 
 VOLUME ["/app/images"]
-CMD ['python app/app.py]
+CMD ['python app/app.py']
 
